@@ -21,6 +21,10 @@ services:
       - broker
     networks:
       - mqtt-net
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./Publicador:/app
 
   subscriptor:
     build: ./Subscriptor
@@ -31,6 +35,10 @@ services:
       - broker
     networks:
       - mqtt-net
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./Subscriptor:/app
 
 networks:
   mqtt-net: {}

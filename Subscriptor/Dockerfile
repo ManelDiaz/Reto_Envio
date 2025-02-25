@@ -1,5 +1,7 @@
-FROM python:3.9
+FROM python:3.12.3
 WORKDIR /app
-COPY . .
-RUN pip install -r requirements.txt
-CMD ["python", "subscriptor.py"]
+COPY . /app
+RUN pip install --no-cache-dir django paho-mqtt
+EXPOSE 8000
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
