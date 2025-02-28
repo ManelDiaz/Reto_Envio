@@ -48,3 +48,27 @@ h2 {
     flex-direction: column;
     align-items: flex-start;
 }
+
+.messages {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.message-text {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.message-time {
+    text-align: right;
+    font-size: 0.8em;
+    color: #888;
+}

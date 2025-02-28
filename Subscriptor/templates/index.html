@@ -11,11 +11,19 @@
 
 <body>
 <h2>Recibir mensajes</h2>
-<!--{ for mensaje in mensajes %}
-y todo lo demás
--->
+{% if lista_mensajes %}
+    <div class="messages">
+        {% for mensaje in lista_mensajes %}
+            <div class="message">
+                <div class="message-text">{{ mensaje.texto }}</div>
+                <div class="message-time">{{ mensaje.fecha_recepcion }}</div>
+            </div>
+        {% endfor %}
+    </div>
 
-<!--aquí igual un botón a otra pantalla con mensajes recientes, o que al mendar mensaje se redirija a esa pantalla-->
+{% else %}
+    <p>No hay mensajes</p>
+{% endif %}
 </body>
 
 </html>
