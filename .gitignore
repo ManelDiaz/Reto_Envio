@@ -23,7 +23,6 @@ ENV/
 *.bak
 *.tmp
 *.secret
-*.key
 
 # Archivos de dependencias y compilación
 pip-log.txt

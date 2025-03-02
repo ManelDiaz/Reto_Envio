@@ -8,8 +8,7 @@ services:
       - ./mosquitto/config:/mosquitto/config
       - ./mosquitto/data:/mosquitto/data
       - ./mosquitto/log:/mosquitto/log
-      - ./mqtt_ssl/certs/ca:/mosquitto/ca_certs
-      - ./mqtt_ssl/certs/server:/mosquitto/certs
+      - ./mosquitto/certs:/mosquitto/certs
     networks:
       - mqtt-net
 
