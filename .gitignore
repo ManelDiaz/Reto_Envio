@@ -35,13 +35,8 @@ pip-delete-this-directory.txt
 
 # Archivos de Docker y Mosquitto
 docker-compose.override.yml
-mosquitto/config/mosquitto.conf
-mosquitto/data/
-mosquitto/log/
 
 # Archivos generados
 /media/
-static/
-db.sqlite3
 *.tar
 *.img
