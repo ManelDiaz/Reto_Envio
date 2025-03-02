@@ -3,12 +3,13 @@ services:
     image: eclipse-mosquitto:latest
     container_name: Broker
     ports:
-      - "1883:1883"
-      - "9001:9001"
+      - "8883:8883"
     volumes:
       - ./mosquitto/config:/mosquitto/config
       - ./mosquitto/data:/mosquitto/data
       - ./mosquitto/log:/mosquitto/log
+      - ./mqtt_ssl/certs/ca:/mosquitto/ca_certs
+      - ./mqtt_ssl/certs/server:/mosquitto/certs
     networks:
       - mqtt-net
 
@@ -25,6 +26,7 @@ services:
       - "8000:8000"
     volumes:
       - ./Publicador:/app
+      - ./mqtt_ssl/certs/client:/certs 
 
   subscriptor:
     build: ./Subscriptor
@@ -39,6 +41,7 @@ services:
       - "8001:8000"
     volumes:
       - ./Subscriptor:/app
+      - ./mqtt_ssl/certs/client:/certs
 
 networks:
   mqtt-net: {}

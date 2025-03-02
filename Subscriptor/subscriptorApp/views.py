@@ -21,7 +21,7 @@ def recibir_mensajes():
     client = mqtt.Client(client_id="subscriptorApp", clean_session=False)
     client.on_connect = on_connect
     client.on_message = on_message
-    client.connect(host="broker", port=1883)
+    client.connect(host="broker", port=8883)
     client.loop_forever()
 
 

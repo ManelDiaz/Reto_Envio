@@ -1,0 +1,47 @@
+# Archivos de Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de bases de datos SQLite
+*.sqlite3
+
+# Entornos virtuales y configuraciones de entorno
+.venv/
+venv/
+ENV/
+.env
+*.env
+.envrc
+
+# Archivos de sistema y temporales
+*.DS_Store
+*.log
+*.pid
+*.bak
+*.tmp
+*.secret
+*.key
+
+# Archivos de dependencias y compilación
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# Archivos de Docker y Mosquitto
+docker-compose.override.yml
+mosquitto/config/mosquitto.conf
+mosquitto/data/
+mosquitto/log/
+
+# Archivos generados
+/media/
+static/
+db.sqlite3
+*.tar
+*.img

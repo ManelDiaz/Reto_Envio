@@ -7,7 +7,7 @@ import os
 
 def enviar_por_mqtt(mensaje):
     client = mqtt.Client()
-    client.connect("broker", 1883, 60)
+    client.connect("broker", 8883, 60)
     client.publish("chat/mensaje", mensaje)
     print("Mensaje enviado")
     client.disconnect()
