@@ -14,9 +14,9 @@ def enviar_por_mqtt(mensaje):
     client = mqtt.Client()
     try:
         client.tls_set(
-            ca_certs="/certs/ca.crt",
-            certfile="/certs/server.crt",
-            keyfile="/certs/server.key", 
+            ca_certs="/certs/publicador/ca.crt",
+            certfile="/certs/publicador/cliente.crt",
+            keyfile="/certs/publicador/cliente.key", 
             tls_version=mqtt.ssl.PROTOCOL_TLS
         )
         client.tls_insecure_set(True)

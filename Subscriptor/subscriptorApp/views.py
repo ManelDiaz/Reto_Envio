@@ -5,6 +5,9 @@ from django.views import View
 from .models import MensajeRecibido
 import os
 import threading
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def on_connect(client, userdata, flags, rc):
@@ -14,15 +17,22 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, message):
     mensaje_texto = message.payload.decode("utf-8")
+    print(f"📩 Mensaje recibido: {mensaje_texto}")  # <-- Verifica si llega un mensaje
+
+    try:
+        MensajeRecibido.objects.create(texto=mensaje_texto, fecha_recepcion=now())
+        print("✅ Mensaje guardado en la base de datos")
+    except Exception as e:
+        print(f"❌ Error guardando en la base de datos: {e}")
     MensajeRecibido.objects.create(texto=mensaje_texto, fecha_recepcion=now())
 
 
 def recibir_mensajes():
     client = mqtt.Client(client_id="subscriptorApp", clean_session=False)
     client.tls_set(
-        ca_certs="/certs/ca.crt",
-        certfile="/certs/server.crt",
-        keyfile="/certs/server.key",
+        ca_certs="/certs/suscriptor/ca.crt",
+        certfile="/certs/suscriptor/suscriptor.crt",
+        keyfile="/certs/suscriptor/suscriptor.key",
         tls_version=mqtt.ssl.PROTOCOL_TLS
         
     )
