@@ -11,19 +11,7 @@
 
 <body>
 <h2>Enviar mensajes</h2>
-<form action="{% url 'index' %}" method="post">
-    {% csrf_token %}
-    {{ formulario.errors }}
-    {{ formulario.as_p }}
-    <input type="submit" value="Nuevo mensaje">
-</form>
-<ul>
-    {% for field, errors in formulario.errors.items %}
-        <li>{{ field }}: {{ errors }}</li>
-    {% endfor %}
-</ul>
-
-<!--aquí igual un botón a otra pantalla con mensajes recientes, o que al mendar mensaje se redirija a esa pantalla-->
+<button><a href="{% url 'crear' %}">Nuevo mensaje</a></button>
 </body>
 
 </html>

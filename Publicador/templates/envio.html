@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicador</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+
+<body>
+<h2>Enviar mensajes</h2>
+<form action="{% url 'crear' %}" method="post">
+    {% csrf_token %}
+    {{ formulario.errors }}
+    {{ formulario.as_p }}
+    <input type="submit" value="Nuevo mensaje">
+</form>
+<ul>
+    {% for field, errors in formulario.errors.items %}
+        <li>{{ field }}: {{ errors }}</li>
+    {% endfor %}
+</ul>
+</body>
+
+</html>
