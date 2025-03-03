@@ -19,6 +19,14 @@ def on_message(client, userdata, message):
 
 def recibir_mensajes():
     client = mqtt.Client(client_id="subscriptorApp", clean_session=False)
+    client.tls_set(
+        ca_certs="/certs/ca.crt",
+        certfile="/certs/server.crt",
+        keyfile="/certs/server.key",
+        tls_version=mqtt.ssl.PROTOCOL_TLS
+        
+    )
+    client.tls_insecure_set(True)
     client.on_connect = on_connect
     client.on_message = on_message
     client.connect(host="broker", port=8883)
