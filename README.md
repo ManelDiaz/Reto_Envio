@@ -51,3 +51,13 @@
       1. Clonar el repositorio, utilizando el siguiente comando: git clone https://github.com/ManelDiaz/Reto_Envio.git
 
       2. 
+      
+  Posibles vías de mejora:
+
+
+  Problemas/ Retos encontrados:
+
+
+  Alternativas posibles:
+    
+    
