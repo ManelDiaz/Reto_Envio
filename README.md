@@ -25,7 +25,7 @@
 
       - Mosquitto MQtt como broker
 
-      - Python (Paho-MQtt) para producir y coompartir datos de forma segura 
+      - Python (Paho-MQtt) para producir y compartir datos de forma segura 
 
   Pasos seguidos:
 
