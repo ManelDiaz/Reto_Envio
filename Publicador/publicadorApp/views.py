@@ -10,21 +10,21 @@ def index(request):
     return render(request, 'index.html')
 
 def enviar_por_mqtt(mensaje):
-    print("Enviando mensaje")
+    print("Enviando mensaje", flush=True)
     client = mqtt.Client()
     try:
         client.tls_set(
-            ca_certs="/certs/publicador/ca.crt",
-            certfile="/certs/publicador/cliente.crt",
-            keyfile="/certs/publicador/cliente.key", 
+            ca_certs="/certs/broker/ca.crt",
+            certfile="/certs/publicador/publicador.crt",
+            keyfile="/certs/publicador/publicador.key",
             tls_version=mqtt.ssl.PROTOCOL_TLS
         )
         client.tls_insecure_set(True)
         client.connect("broker", 8883, 60)
         client.publish("chat/mensaje", mensaje)
-        print("Mensaje enviado")
+        print("Mensaje enviado", flush=True)
     except Exception as e:
-        print(f"Error asl enviar mensaje: {e}")
+        print(f"Error asl enviar mensaje: {e}", flush=True)
     finally:
         client.disconnect()
 
@@ -32,7 +32,7 @@ def enviar_por_mqtt(mensaje):
 class MensajeCreateView(View):
     def get(self, request):
         formulario = MensajeForm()
-        print("el get")
+        print("el get", flush=True)
         return render(request, "envio.html", {"formulario": formulario})
 
     def post(self, request):
