@@ -70,6 +70,8 @@
 
 
   Alternativas posibles:
+  
     Durante la realizaón del proyecto sen encontraron diferentes problemas, entre los que destancan:
+    
       - 
     
