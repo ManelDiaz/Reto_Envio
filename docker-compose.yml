@@ -6,8 +6,6 @@ services:
       - "8884:8883"
     volumes:
       - ./mosquitto/config:/mosquitto/config
-      - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/log:/mosquitto/log
       - ./mosquitto/certs:/mosquitto/certs
     networks:
       - mqtt-net
