@@ -12,8 +12,8 @@
 
  Descripción del proyecto:
 
-    El proyecto se basa en montar un broker MQtt utilizando 2 contenedores, para el publicador y para el suscriptor
-    utilizando una autentificación basada en certificados de cliente servidor. 
+    El proyecto se basa en montar un broker MQtt utilizando 3 contenedores, para el publicador, para el suscriptor y 
+    para el broker utilizando una autentificación basada en certificados de cliente servidor. 
 
     Para la realización del proyecto se han utilizado las siguientes tecnologías:
     
