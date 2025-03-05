@@ -63,6 +63,7 @@
     Para poder mejorar el proyecto realizado se podrian haber implementado las siguientes vías de mejora:
     
       - Crear una interfaz web mas amigable
+      
       - Mejorar la gestión de errores y logs para facilitar la depuración, sin necesidad de realizar prints en la consola
 
   Problemas/ Retos encontrados:
