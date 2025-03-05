@@ -31,7 +31,7 @@
 
     Para la realización del proyecto se han seguido los siguientes pasos:
 
-      - Para empezar se crearon los contenedores utilizando docker compose y se realizaron las configuracion iniciales el 
+      - Para empezar se crearon los contenedores utilizando docker compose y se realizaron las configuraciones iniciales el 
         el archivo docker-compose.yml. Además, se configuraron los mensajes sin credenciales para poder povar las configuraciones
         añadidas. 
 
@@ -50,7 +50,13 @@
 
       1. Clonar el repositorio, utilizando el siguiente comando: git clone https://github.com/ManelDiaz/Reto_Envio.git
 
-      2. 
+      2. Levantar los contenedores mediante el comando 'docker-compose up -d' en la terminal de WSL. 
+
+      3. Después de levantar los contendores se puede buscar en el navegador 'http://localhost:8000' para ver la interfaz del publicador y 
+         http://localhost:8001' para la del suscriptor. 
+
+      4. Para poder producir y consumir los mensajes desde la terminal es necesario utilizar los siguientes comandos. 
+      
       
   Posibles vías de mejora:
 
