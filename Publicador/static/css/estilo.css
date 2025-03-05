@@ -52,3 +52,8 @@ button {
 button:hover {
     background-color: #e68900;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
